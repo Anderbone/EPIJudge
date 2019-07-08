@@ -11,6 +11,7 @@ def divide(x, y):
             power -= 1
 
         result += 1 << power
+        # result += y_power/y
         x -= y_power
     return result
 

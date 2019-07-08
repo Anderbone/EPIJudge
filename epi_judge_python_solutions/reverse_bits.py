@@ -5975,6 +5975,12 @@ def reverse_bits(x):
             | PRECOMPUTED_REVERSE[(x >> (3 * MASK_SIZE)) & BIT_MASK])
 
 
+def reverse_bits0(x):
+
+    s = str(bin(x)).replace('0b','')
+    s = '0'*(64-len(s)) + s
+    ans = s[::-1]
+    return int(ans, 2)
 
 
 
