@@ -11,9 +11,9 @@ from test_framework.test_utils import enable_executor_hook
 
 # Assumption: there are at least k elements in the stream.
 def online_random_sample(stream, k):
-
     # Stores the first k elements.
     running_sample = list(itertools.islice(stream, k))
+    print(running_sample)
 
     # Have read the first k elements.
     num_seen_so_far = k

@@ -1,6 +1,7 @@
 from test_framework import generic_test
 
 
+
 def can_reach_end(A):
 
 
@@ -14,7 +15,6 @@ def can_reach_end(A):
     if k == 0:
         return True
     return False
-
 
 if __name__ == '__main__':
     exit(

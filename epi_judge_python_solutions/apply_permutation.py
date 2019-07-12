@@ -12,10 +12,11 @@ def apply_permutation(perm, A):
             temp = perm[next]
             # Subtracts len(perm) from an entry in perm to make it negative,
             # which indicates the corresponding move has been performed.
-            perm[next] -= len(perm)
+            # perm[next] -= len(perm)
+            perm[next] = -1
             next = temp
     # Restore perm.
-    perm[:] = [a + len(perm) for a in perm]
+    # perm[:] = [a + len(perm) for a in perm]
 
 
 def apply_permutation_wrapper(perm, A):

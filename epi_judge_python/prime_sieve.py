@@ -4,7 +4,14 @@ from test_framework import generic_test
 # Given n, return all primes up to and including n.
 def generate_primes(n):
     # TODO - you fill in here.
-    return []
+    primes = [1] * (n+1) # default all primes
+    res = []
+    for i in range(2, n+1):
+        if primes[i] == 1:
+            res.append(i)
+            for j in range(i*i, n+1, i):
+                primes[j] = 0
+    return res
 
 
 if __name__ == '__main__':

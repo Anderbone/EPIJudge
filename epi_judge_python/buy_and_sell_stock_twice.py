@@ -3,6 +3,7 @@ from test_framework import generic_test
 
 def buy_and_sell_stock_twice(prices):
     # TODO - you fill in here.
+
     return 0.0
 
 
