@@ -1,6 +1,7 @@
 import collections
 import functools
 import math
+import random
 
 from test_framework import generic_test
 from test_framework.random_sequence_checker import run_func_with_retries
@@ -8,8 +9,28 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def nonuniform_random_number_generation(values, probabilities):
-    # TODO - you fill in here.
-    return 0
+    # only need to store one side of list, don't need (start, end). could use bisect
+    mydic = {}
+    # for i, vp in enumerate(zip(values,p/robabilities)):
+    for i in range(len(values)):
+        if i == 0:
+            # mydic[values[i]] = [0, probabilities[i]]
+            pre = probabilities[0]
+            mydic[(0, probabilities[i])] = values[i]
+            # print(mydic)
+        else:
+            # mydic[values[i]] = [probabilities[i-1], probabilities[i]]
+            now = pre+probabilities[i]
+            mydic[(pre, now)] = values[i]
+            pre = now
+            # mydic[(probabilities[i-1], probabilities[i]+probabilities[i-1])] = values[i]
+            # print(mydic)
+    print(mydic)
+    r = random.randrange(0,1)
+    for i in mydic.keys():
+        if r >= i[0] and r < i[1]:
+            return mydic[(i[0], i[1])]
+            # return list(mydic.keys())[list(mydic.values()).index(i[0],i[1])]
 
 
 @enable_executor_hook

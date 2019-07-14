@@ -14,7 +14,7 @@ def random_subset(n, k):
     for i in range(k):
         r = random.randrange(i, n)
         A[i], A[r] = A[r], A[i]
-    # A[:] = random.sample(A, k)
+# A[:] = random.sample(A, k)
     return A[:k]
 
 
