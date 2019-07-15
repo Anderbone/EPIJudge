@@ -1,16 +1,36 @@
 from test_framework import generic_test
 from test_framework.test_failure import TestFailure
-
+import functools
+import string
 
 def int_to_string(x):
-    # TODO - you fill in here.
-    return ''
+#    123- '123'
 
-
+    return str(x)
 def string_to_int(s):
-    # TODO - you fill in here.
-    return 0
+    x = 123
+    a = (chr(ord('0') + x % 10))
+    print(a)
+    print(type(a))
+    flag = 0
+    if s[0] is '-':
+        flag = 1
+        s = s[1:]
+    num = 0
+    # while :
+    #     one = s % 10
+    #     left = s // 10
 
+    for digit in reversed(s):
+        digit = ord(digit)
+        digit = chr(digit)
+        num += digit
+        num *= 10
+    num /= 10
+
+    if flag:
+        num = -num
+    return num
 
 def wrapper(x, s):
     if int_to_string(x) != s:

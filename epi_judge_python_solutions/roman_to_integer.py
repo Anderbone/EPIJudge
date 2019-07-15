@@ -9,7 +9,8 @@ def roman_to_integer(s):
 
     return functools.reduce(
         lambda val, i: val + (-T[s[i]] if T[s[i]] < T[s[i + 1]] else T[s[i]]),
-        reversed(range(len(s) - 1)), T[s[-1]])
+        range(len(s) - 1), T[s[-1]])
+        # reversed(range(len(s) - 1)), T[s[-1]])
 
 
 if __name__ == '__main__':

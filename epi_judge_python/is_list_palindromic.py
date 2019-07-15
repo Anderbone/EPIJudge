@@ -3,6 +3,7 @@ from test_framework import generic_test
 
 def is_linked_list_a_palindrome(L):
     # TODO - you fill in here.
+
     return True
 
 

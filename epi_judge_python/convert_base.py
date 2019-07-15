@@ -3,6 +3,7 @@ from test_framework import generic_test
 
 def convert_base(num_as_string, b1, b2):
     # TODO - you fill in here.
+
     return ''
 
 

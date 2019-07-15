@@ -5,8 +5,11 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def replace_and_remove(size, s):
-    # TODO - you fill in here.
-    return 0
+    st = ''.join(s)
+    st = st.replace('a','dd')
+    st= st.replace('b','')
+    s[:] = st
+    return len(st)
 
 
 @enable_executor_hook

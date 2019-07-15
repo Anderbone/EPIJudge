@@ -6,6 +6,7 @@ from test_framework.test_failure import TestFailure
 
 
 def int_to_string(x):
+    print(x)
 
     is_negative = False
     if x < 0:
@@ -19,14 +20,15 @@ def int_to_string(x):
             break
 
     # Adds the negative sign back if is_negative
+    # print(('-' if is_negative else '') + ''.join(reversed(s)))
     return ('-' if is_negative else '') + ''.join(reversed(s))
 
 
-def string_to_int(s):
 
-    return functools.reduce(
-        lambda running_sum, c: running_sum * 10 + string.digits.index(c),
-        s[s[0] == '-':], 0) * (-1 if s[0] == '-' else 1)
+def string_to_int(s):
+    f = lambda a, c: a * 10 + string.digits.index(c)
+    res = functools.reduce(f, s[s[0] == '-':], 0)
+    return res * (-1 if s[0] == '-' else 1)
 
 
 def wrapper(x, s):
