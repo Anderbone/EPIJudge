@@ -1,10 +1,23 @@
 from test_framework import generic_test
 
 
-def is_linked_list_a_palindrome(L):
-    # TODO - you fill in here.
-
+def is_linked_list_a_palindrome(head):
+    if head is None:
+        return True
+    hare = turtle = curr = head
+    while hare and hare.next:
+        hare = hare.next.next
+        turtle = turtle.next
+    stack = []
+    while turtle:
+        stack.append(turtle.data)
+        turtle = turtle.next
+    while stack:
+        if curr.data != stack.pop():
+            return False
+        curr = curr.next
     return True
+
 
 
 if __name__ == '__main__':

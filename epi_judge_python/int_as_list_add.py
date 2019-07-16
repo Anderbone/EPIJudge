@@ -1,9 +1,35 @@
 from test_framework import generic_test
+from list_node import ListNode
 
+def add_two_numbers(l1, l2):
 
-def add_two_numbers(L1, L2):
-    # TODO - you fill in here.
-    return None
+    def getnum(l1):
+        number1 = 0
+        count = 0
+        while l1 is not None:
+            digit = l1.data
+            # number1 = number1*10 + digit
+            number1 = 10 ** count * digit + number1
+            l1 = l1.next
+            count += 1
+        return number1
+
+    number1 = getnum(l1)
+    number2 = getnum(l2)
+
+    ans = number1 + number2
+
+    head = ListNode(ans % 10)
+    p = head
+    ans = ans // 10
+    while (ans != 0):
+        digit = ans % 10
+        ans = ans // 10
+        p.next = ListNode(digit)
+        p = p.next
+
+    return head
+    
 
 
 if __name__ == '__main__':
