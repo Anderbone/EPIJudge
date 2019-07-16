@@ -7,6 +7,25 @@ from test_framework.test_utils import enable_executor_hook
 
 def has_cycle(head):
     # TODO - you fill in here.
+    meet = None
+    fast = head
+    slow = head
+    # must check all 3 here
+    while slow and fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow is fast:
+            meet = slow
+            break
+
+    if meet:
+        p = head
+        q = meet
+        while p and q:
+            if p is q:
+                return p
+            p = p.next
+            q = q.next
     return None
 
 

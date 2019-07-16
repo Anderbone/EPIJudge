@@ -14,6 +14,7 @@ def remove_kth_last(L, k):
     while first:
         first, second = first.next, second.next
     # second points to the (k + 1)-th last node, deletes its successor.
+
     second.next = second.next.next
     return dummy_head.next
 

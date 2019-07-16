@@ -1,5 +1,5 @@
 import functools
-
+from list_node import ListNode
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
@@ -16,7 +16,7 @@ class Name:
 
 def eliminate_duplicate(A):
     # TODO - you fill in here.
-    return
+
 
 
 @enable_executor_hook
