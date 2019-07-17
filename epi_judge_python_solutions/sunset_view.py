@@ -7,11 +7,13 @@ def examine_buildings_with_sunset(sequence):
 
     BuildingWithHeight = collections.namedtuple('BuildingWithHeight',
                                                 ('id', 'height'))
+    # print(sequence)
     candidates = []
     for building_idx, building_height in enumerate(sequence):
         while candidates and building_height >= candidates[-1].height:
             candidates.pop()
         candidates.append(BuildingWithHeight(building_idx, building_height))
+    # print([c.id for c in reversed(candidates)])
     return [c.id for c in reversed(candidates)]
 
 

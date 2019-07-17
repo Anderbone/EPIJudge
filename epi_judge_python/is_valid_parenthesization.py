@@ -1,9 +1,23 @@
 from test_framework import generic_test
-
+import collections
 
 def is_well_formed(s):
-    # TODO - you fill in here.
-    return True
+    dic = {'(': ')', '[': ']', '{': '}'}
+    # stack = collections.deque()
+    stack = []
+    for i in s:
+        if i is '(' or i is '{' or i is '[':
+            stack.append(i)
+        elif i is '}' or i is ')' or i is ']':
+            if not stack:
+                return False
+            if dic[stack.pop()] is not i:
+                return False
+
+    if not stack:
+        return True
+    return False
+
 
 
 if __name__ == '__main__':

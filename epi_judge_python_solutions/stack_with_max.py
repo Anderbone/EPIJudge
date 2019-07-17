@@ -7,7 +7,7 @@ from test_framework.test_failure import TestFailure
 class Stack:
 
     ElementWithCachedMax = collections.namedtuple('ElementWithCachedMax',
-                                                  ('element', 'max'))
+                                                  ('element', 'maxx'))
 
     def __init__(self):
         self._element_with_cached_max = []
@@ -20,7 +20,7 @@ class Stack:
 
         if self.empty():
             raise IndexError('max(): empty stack')
-        return self._element_with_cached_max[-1].max
+        return self._element_with_cached_max[-1].maxx
 
     def pop(self):
 
