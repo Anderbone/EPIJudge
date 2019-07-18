@@ -27,8 +27,15 @@ def lca(tree, node0, node1):
         if right_result.num_target_nodes == 2:
             # Found both nodes in the right subtree.
             return right_result
+        # if node0 is tree and node1 is tree:
+        #     node_c = 2
+        # elif node0 is tree or node1 is tree:
+        #     node_c = 1
+        # else:
+        #     node_c = 0
         num_target_nodes = (
             left_result.num_target_nodes + right_result.num_target_nodes +
+            # node_c)
             (node0, node1).count(tree))
         return Status(num_target_nodes, tree
                       if num_target_nodes == 2 else None)

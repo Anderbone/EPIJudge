@@ -13,8 +13,28 @@ class BinaryTreeNode:
 
 
 def construct_right_sibling(tree):
-    # TODO - you fill in here.
-    return
+
+    def levelOrder(root):
+        ans = []
+        if not root:
+            return []
+        level = [root]
+        while level:
+            ans.append([node.data for node in level])
+            level = [i for p in level for i in (p.left, p.right) if i]
+        return ans
+
+    res = levelOrder(tree)
+
+    for level, row in enumerate(res):
+        for count, each in enumerate(row):
+            if count == 2 ** level - 1:
+                each.next = None
+            else:
+                # while(each is not None):
+                each.next = row[count + 1]
+    return tree
+
 
 
 def traverse_next(node):

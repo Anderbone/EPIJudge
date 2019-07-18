@@ -1,12 +1,23 @@
 import functools
-
+import collections
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
-
+from binary_tree_node import BinaryTreeNode
 
 def reconstruct_preorder(preorder):
-    # TODO - you fill in here.
-    return None
+    
+    def helper(plist):
+        if plist[-1] is None:
+            plist.pop()
+            return None
+        root = BinaryTreeNode(plist.pop())
+        # plist.popleft()
+        root.left = helper(plist)
+        root.right = helper(plist)
+        return root
+    preorder.reverse()
+    # preorder = collections.deque(preorder)
+    return helper(preorder)
 
 
 @enable_executor_hook
