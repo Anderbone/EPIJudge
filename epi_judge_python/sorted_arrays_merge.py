@@ -1,8 +1,21 @@
 from test_framework import generic_test
-
+import heapq
 
 def merge_sorted_arrays(sorted_arrays):
     # TODO - you fill in here.
+    sorted_arrays_iters = [iter(x) for x in sorted_arrays]
+    min_heap = []
+    for i in sorted_arrays:
+        min_heap.append(i[0])
+    heapq.heapify(min_heap)
+
+    res = []
+    while min_heap:
+        small = heapq.heappop(min_heap)
+        res.append(small)
+
+
+
     return []
 
 

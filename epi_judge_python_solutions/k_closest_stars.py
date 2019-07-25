@@ -42,7 +42,9 @@ def find_closest_k_stars(stars, k):
 
     # Iteratively extract from the max-heap, which yields the stars sorted
     # according from furthest to closest.
-    return [s[1] for s in heapq.nlargest(k, max_heap)]
+    # return [s[1] for s in heapq.nlargest(k, max_heap)]
+    return [s[1] for s in max_heap]
+
 
 
 def comp(expected_output, output):

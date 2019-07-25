@@ -9,6 +9,7 @@ def sort_k_increasing_decreasing_array(A):
     # Decomposes A into a set of sorted arrays.
     sorted_subarrays = []
     INCREASING, DECREASING = range(2)
+    # print(INCREASING, DECREASING)
     subarray_type = INCREASING
     start_idx = 0
     for i in range(1, len(A) + 1):
