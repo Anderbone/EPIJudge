@@ -7,8 +7,20 @@ MinMax = collections.namedtuple('MinMax', ('smallest', 'largest'))
 
 
 def find_min_max(A):
-    # TODO - you fill in here.
-    return MinMax(0, 0)
+    mi, ma = A[0], A[0]
+
+    for i in range(2, len(A)-1, 2):
+        if A[i] > A[i+1]:
+            A[i], A[i+1] = A[i+1], A[i]
+        # if A[i] <= A[i+1]:
+        mi = min(mi, A[i])
+        ma = max(ma, A[i+1])
+
+    if len(A) % 2:
+        # when 1,2,3,4,5.  need to check 5 at last
+        mi = min(mi, A[-1])
+        ma = max(ma, A[-1])
+    return MinMax(mi, ma)
 
 
 def res_printer(prop, value):
