@@ -9,6 +9,8 @@ Subarray = collections.namedtuple('Subarray', ('start', 'end'))
 
 
 def find_smallest_subarray_covering_set(paragraph, keywords):
+    print(paragraph)
+    print(keywords)
     # TODO - you fill in here.
     return Subarray(0, 0)
 

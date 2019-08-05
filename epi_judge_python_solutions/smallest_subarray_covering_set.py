@@ -21,7 +21,8 @@ def find_smallest_subarray_covering_set(paragraph, keywords):
                 remaining_to_cover -= 1
 
         # Keeps advancing left until keywords_to_cover does not contain all
-        # keywords.
+        # keywords.  The for loop above will get -2 if multiple c covered, a bbb c, we
+        # need abc, then this while loop will add 1 to b when move right
         while remaining_to_cover == 0:
             if result == (-1, -1) or right - left < result[1] - result[0]:
                 result = (left, right)
