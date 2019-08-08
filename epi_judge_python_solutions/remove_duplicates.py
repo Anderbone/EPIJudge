@@ -22,8 +22,9 @@ class Name:
 
 
 def eliminate_duplicate(A):
-
+    # print(A)
     A.sort()  # Makes identical elements become neighbors.
+    # print(A)
     write_idx = 1
     for cand in A[1:]:
         if cand != A[write_idx - 1]:
