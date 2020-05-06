@@ -1,13 +1,18 @@
 import collections
 import functools
 import math
+<<<<<<< HEAD
 import random
+=======
+from typing import List
+>>>>>>> upstream/master
 
 from test_framework import generic_test
 from test_framework.random_sequence_checker import run_func_with_retries
 from test_framework.test_utils import enable_executor_hook
 
 
+<<<<<<< HEAD
 def nonuniform_random_number_generation(values, probabilities):
     # only need to store one side of list, don't need (start, end). could use bisect
     mydic = {}
@@ -31,6 +36,12 @@ def nonuniform_random_number_generation(values, probabilities):
         if r >= i[0] and r < i[1]:
             return mydic[(i[0], i[1])]
             # return list(mydic.keys())[list(mydic.values()).index(i[0],i[1])]
+=======
+def nonuniform_random_number_generation(values: List[int],
+                                        probabilities: List[float]) -> int:
+    # TODO - you fill in here.
+    return 0
+>>>>>>> upstream/master
 
 
 @enable_executor_hook
@@ -39,7 +50,10 @@ def nonuniform_random_number_generation_wrapper(executor, values,
     def nonuniform_random_number_generation_runner(executor, values,
                                                    probabilities):
         N = 10**6
-        result = executor.run(lambda : [nonuniform_random_number_generation(values, probabilities) for _ in range(N)])
+        result = executor.run(lambda: [
+            nonuniform_random_number_generation(values, probabilities)
+            for _ in range(N)
+        ])
 
         counts = collections.Counter(result)
         for v, p in zip(values, probabilities):
@@ -58,5 +72,5 @@ def nonuniform_random_number_generation_wrapper(executor, values,
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "nonuniform_random_number.py", 'nonuniform_random_number.tsv',
+            'nonuniform_random_number.py', 'nonuniform_random_number.tsv',
             nonuniform_random_number_generation_wrapper))

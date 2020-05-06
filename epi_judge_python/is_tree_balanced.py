@@ -1,6 +1,8 @@
+from binary_tree_node import BinaryTreeNode
 from test_framework import generic_test
 
 
+<<<<<<< HEAD
 def is_balanced_binary_tree(tree):
     def height(root):
         if not root:
@@ -8,6 +10,11 @@ def is_balanced_binary_tree(tree):
         lh = height(root.left)
         rh = height(root.right)
         return 1+max(lh, rh)
+=======
+def is_balanced_binary_tree(tree: BinaryTreeNode) -> bool:
+    # TODO - you fill in here.
+    return True
+>>>>>>> upstream/master
 
     def helper(root):
         if not root:
@@ -30,6 +37,6 @@ def is_balanced_binary_tree(tree):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("is_tree_balanced.py",
+        generic_test.generic_test_main('is_tree_balanced.py',
                                        'is_tree_balanced.tsv',
                                        is_balanced_binary_tree))

@@ -1,6 +1,9 @@
+from typing import Iterator, List
+
 from test_framework import generic_test
 import heapq, itertools
 
+<<<<<<< HEAD
 def sort_approximately_sorted_array(sequence, k):
     h = []
     for i in  itertools.islice(sequence, k):
@@ -16,6 +19,12 @@ def sort_approximately_sorted_array(sequence, k):
     while h:
         small = heapq.heappop(h)
         res.append(small)
+=======
+def sort_approximately_sorted_array(sequence: Iterator[int],
+                                    k: int) -> List[int]:
+    # TODO - you fill in here.
+    return []
+>>>>>>> upstream/master
 
     return res
 
@@ -26,5 +35,5 @@ def sort_approximately_sorted_array_wrapper(sequence, k):
 if __name__ == '__main__':
     exit(
         generic_test.generic_test_main(
-            "sort_almost_sorted_array.py", 'sort_almost_sorted_array.tsv',
+            'sort_almost_sorted_array.py', 'sort_almost_sorted_array.tsv',
             sort_approximately_sorted_array_wrapper))

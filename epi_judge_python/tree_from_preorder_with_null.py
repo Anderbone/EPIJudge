@@ -1,9 +1,16 @@
 import functools
+<<<<<<< HEAD
 import collections
+=======
+from typing import List
+
+from binary_tree_node import BinaryTreeNode
+>>>>>>> upstream/master
 from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 from binary_tree_node import BinaryTreeNode
 
+<<<<<<< HEAD
 def reconstruct_preorder(preorder):
     
     def helper(plist):
@@ -18,6 +25,11 @@ def reconstruct_preorder(preorder):
     preorder.reverse()
     # preorder = collections.deque(preorder)
     return helper(preorder)
+=======
+def reconstruct_preorder(preorder: List[int]) -> BinaryTreeNode:
+    # TODO - you fill in here.
+    return BinaryTreeNode()
+>>>>>>> upstream/master
 
 
 @enable_executor_hook
@@ -28,6 +40,6 @@ def reconstruct_preorder_wrapper(executor, data):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("tree_from_preorder_with_null.py",
+        generic_test.generic_test_main('tree_from_preorder_with_null.py',
                                        'tree_from_preorder_with_null.tsv',
                                        reconstruct_preorder_wrapper))

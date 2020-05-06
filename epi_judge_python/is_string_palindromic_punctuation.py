@@ -1,6 +1,7 @@
 from test_framework import generic_test
 
 
+<<<<<<< HEAD
 def is_palindrome(s):
     if not s:
         return True
@@ -16,11 +17,15 @@ def is_palindrome(s):
         i += 1
         j -= 1
 
+=======
+def is_palindrome(s: str) -> bool:
+    # TODO - you fill in here.
+>>>>>>> upstream/master
     return True
 
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("is_string_palindromic_punctuation.py",
-                                       "is_string_palindromic_punctuation.tsv",
-                                       is_palindrome))
+        generic_test.generic_test_main(
+            'is_string_palindromic_punctuation.py',
+            'is_string_palindromic_punctuation.tsv', is_palindrome))

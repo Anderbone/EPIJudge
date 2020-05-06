@@ -2,6 +2,7 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
 
+<<<<<<< HEAD
 def decoding(s):
     # TODO - you fill in here. 13e4f to eee
     res = []
@@ -33,6 +34,16 @@ def encoding(s):
         res.append(str(count)+s[i])
         i += 1
     return ''.join(res)
+=======
+def decoding(s: str) -> str:
+    # TODO - you fill in here.
+    return ''
+
+
+def encoding(s: str) -> str:
+    # TODO - you fill in here.
+    return ''
+>>>>>>> upstream/master
 
 
 def rle_tester(encoded, decoded):
@@ -44,6 +55,6 @@ def rle_tester(encoded, decoded):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("run_length_compression.py",
+        generic_test.generic_test_main('run_length_compression.py',
                                        'run_length_compression.tsv',
                                        rle_tester))

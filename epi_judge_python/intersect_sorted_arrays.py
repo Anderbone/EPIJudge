@@ -1,3 +1,5 @@
+from typing import List
+
 from test_framework import generic_test
 import bisect
 
@@ -12,6 +14,12 @@ def intersect_two_sorted_arrays0(A, B):
            res.append(e)
     return res
 
+<<<<<<< HEAD
+=======
+def intersect_two_sorted_arrays(A: List[int], B: List[int]) -> List[int]:
+    # TODO - you fill in here.
+    return []
+>>>>>>> upstream/master
 
 def intersect_two_sorted_arrays(A, B):
     i, j, res = 0, 0, []
@@ -28,6 +36,6 @@ def intersect_two_sorted_arrays(A, B):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("intersect_sorted_arrays.py",
+        generic_test.generic_test_main('intersect_sorted_arrays.py',
                                        'intersect_sorted_arrays.tsv',
                                        intersect_two_sorted_arrays))

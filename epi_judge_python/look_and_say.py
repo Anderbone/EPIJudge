@@ -1,7 +1,13 @@
 from test_framework import generic_test
 
 
+<<<<<<< HEAD
 def look_and_say(n):
+=======
+def look_and_say(n: int) -> str:
+    # TODO - you fill in here.
+    return ''
+>>>>>>> upstream/master
 
     def helper(str_in):
         res = []
@@ -23,5 +29,5 @@ def look_and_say(n):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("look_and_say.py", "look_and_say.tsv",
+        generic_test.generic_test_main('look_and_say.py', 'look_and_say.tsv',
                                        look_and_say))

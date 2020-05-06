@@ -1,6 +1,9 @@
+from typing import List
+
 from test_framework import generic_test
 
 
+<<<<<<< HEAD
 def generate_pascal_triangle(n):
     numRows = n
     if numRows == 0:
@@ -11,6 +14,11 @@ def generate_pascal_triangle(n):
         return [n1]
     if numRows == 2:
         return [n1, n2]
+=======
+def generate_pascal_triangle(n: int) -> List[List[int]]:
+    # TODO - you fill in here.
+    return []
+>>>>>>> upstream/master
 
     last = generate_pascal_triangle(numRows - 1)
     lastline = last[-1]
@@ -23,6 +31,6 @@ def generate_pascal_triangle(n):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("pascal_triangle.py",
+        generic_test.generic_test_main('pascal_triangle.py',
                                        'pascal_triangle.tsv',
                                        generate_pascal_triangle))

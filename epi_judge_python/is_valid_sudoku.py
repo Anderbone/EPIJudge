@@ -1,7 +1,10 @@
+from typing import List
+
 from test_framework import generic_test
 
 
 # Check if a partially filled matrix has any conflicts.
+<<<<<<< HEAD
 def is_valid_sudoku(partial_assignment):
    
     def check(nine):
@@ -18,6 +21,11 @@ def is_valid_sudoku(partial_assignment):
         for i in partial_assignment[starti:endi]:
             small += i[startj:endj]
         return small
+=======
+def is_valid_sudoku(partial_assignment: List[List[int]]) -> bool:
+    # TODO - you fill in here.
+    return True
+>>>>>>> upstream/master
 
     for i in partial_assignment:
         if check(i) is False:
@@ -36,5 +44,5 @@ def is_valid_sudoku(partial_assignment):
 
 if __name__ == '__main__':
     exit(
-        generic_test.generic_test_main("is_valid_sudoku.py",
-                                       "is_valid_sudoku.tsv", is_valid_sudoku))
+        generic_test.generic_test_main('is_valid_sudoku.py',
+                                       'is_valid_sudoku.tsv', is_valid_sudoku))
