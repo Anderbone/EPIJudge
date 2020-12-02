@@ -5,7 +5,6 @@ from test_framework import generic_test
 from list_node import ListNode
 
 
-<<<<<<< HEAD
 def merge_two_sorted_lists(l1, l2):
     # res = ListNode(0, None)
     pre = ListNode(0)
@@ -21,12 +20,24 @@ def merge_two_sorted_lists(l1, l2):
             pre = pre.next
     return ans.next
 
-=======
 def merge_two_sorted_lists(L1: Optional[ListNode],
                            L2: Optional[ListNode]) -> Optional[ListNode]:
     # TODO - you fill in here.
-    return None
->>>>>>> upstream/master
+    res = pre = ListNode(0)
+    while L1 and L2:
+        if L1.data < L2.data:
+            pre.next = L1
+            L1 = L1.next
+            pre = pre.next
+        elif L1.data >= L2.data:
+            pre.next = L2
+            L2 = L2.next
+            pre = pre.next
+    if L1:
+        pre.next = L1
+    elif L2:
+        pre.next = L2
+    return res.next
 
 
 if __name__ == '__main__':
