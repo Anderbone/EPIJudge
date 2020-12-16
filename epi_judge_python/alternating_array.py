@@ -7,15 +7,26 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def rearrange(A: List[int]) -> None:
-    # TODO - you fill in here.
-    for i in range(len(A)-1):
-        if i%2 == 0:
-            if A[i] > A[i+1]:
-                A[i], A[i+1] = A[i+1], A[i]
-        else:
-            if A[i] < A[i+1]:
-                A[i], A[i+1] = A[i+1], A[i]
-    return A
+    for i in range(len(A)):
+        A[i:i+2] = sorted(A[i:i+2], reverse= i%2 == 1)
+
+
+# def rearrange(A: List[int]) -> None:
+#     A.sort();
+#     for i in range(1, len(A)-1, 2):
+#         A[i], A[i+1] = A[i+1], A[i]
+
+
+# def rearrange(A: List[int]) -> None:
+#     # TODO - you fill in here.
+#     for i in range(len(A)-1):
+#         if i%2 == 0:
+#             if A[i] > A[i+1]:
+#                 A[i], A[i+1] = A[i+1], A[i]
+#         else:
+#             if A[i] < A[i+1]:
+#                 A[i], A[i+1] = A[i+1], A[i]
+#     return A
 
 
 @enable_executor_hook
