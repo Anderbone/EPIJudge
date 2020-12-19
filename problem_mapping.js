@@ -320,7 +320,7 @@ problem_mapping = {
                 "total": 101
             },
             "Python: apply_permutation.py": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             }
         },
@@ -348,7 +348,7 @@ problem_mapping = {
                 "total": 8
             },
             "Python: offline_sampling.py": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             }
         },
@@ -376,7 +376,7 @@ problem_mapping = {
                 "total": 6
             },
             "Python: random_permutation.py": {
-                "passed": 0,
+                "passed": 6,
                 "total": 6
             }
         },
@@ -404,7 +404,7 @@ problem_mapping = {
                 "total": 10
             },
             "Python: nonuniform_random_number.py": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             }
         },
