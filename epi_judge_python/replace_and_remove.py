@@ -5,18 +5,24 @@ from test_framework import generic_test
 from test_framework.test_utils import enable_executor_hook
 
 
-<<<<<<< HEAD
 def replace_and_remove(size, s):
     st = ''.join(s)
     st = st.replace('a','dd')
     st= st.replace('b','')
     s[:] = st
     return len(st)
-=======
-def replace_and_remove(size: int, s: List[str]) -> int:
-    # TODO - you fill in here.
-    return 0
->>>>>>> upstream/master
+# def replace_and_remove(size: int, s: List[str]) -> int:
+#     res = []
+#     for c in s:
+#         if c == 'a':
+#             res.append('d')
+#             res.append('d')
+#         else:
+#             res.append(c)
+#     # print(res)
+#     s[:] = list(filter(lambda x: x != '' and x != 'b', res))
+#     # s[:] = res
+#     return len(s)
 
 
 @enable_executor_hook
