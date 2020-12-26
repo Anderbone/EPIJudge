@@ -5,12 +5,9 @@ from test_framework import generic_test
 from test_framework.test_failure import TestFailure
 
 
-<<<<<<< HEAD
 def int_to_string(x):
     print(x)
-=======
 def int_to_string(x: int) -> str:
->>>>>>> upstream/master
 
     is_negative = False
     if x < 0:
@@ -28,19 +25,16 @@ def int_to_string(x: int) -> str:
     return ('-' if is_negative else '') + ''.join(reversed(s))
 
 
-<<<<<<< HEAD
 
 def string_to_int(s):
     f = lambda a, c: a * 10 + string.digits.index(c)
     res = functools.reduce(f, s[s[0] == '-':], 0)
     return res * (-1 if s[0] == '-' else 1)
-=======
 def string_to_int(s: str) -> int:
 
     return (-1 if s[0] == '-' else 1) * functools.reduce(
         lambda running_sum, c: running_sum * 10 + string.digits.index(c),
         s[s[0] in '-+':], 0)
->>>>>>> upstream/master
 
 
 def wrapper(x, s):
