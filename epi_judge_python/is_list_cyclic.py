@@ -8,6 +8,15 @@ from test_framework.test_utils import enable_executor_hook
 
 
 def has_cycle(head: ListNode) -> Optional[ListNode]:
+    cur = head
+    while cur:
+        if cur.data == float('inf'):
+            return cur
+        cur.data = float('inf')
+        cur = cur.next
+    return None
+
+def has_cycle(head: ListNode) -> Optional[ListNode]:
     # TODO - you fill in here.
     meet = None
     fast = head
