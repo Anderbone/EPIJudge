@@ -3,22 +3,26 @@ from typing import List
 from test_framework import generic_test
 
 
-<<<<<<< HEAD
-def search_smallest(A):
-
+# def search_smallest(A):
+#
+#     left, right = 0, len(A) - 1
+#     while left < right:
+#         mid = left + (right - left) // 2
+#         if A[mid] > A[right]:
+#             left = mid + 1
+#         else:
+#             right = mid
+#     return left
+def search_smallest(A: List[int]) -> int:
     left, right = 0, len(A) - 1
     while left < right:
         mid = left + (right - left) // 2
         if A[mid] > A[right]:
             left = mid + 1
-        else:
+        elif A[mid] < A[right]:
             right = mid
+    # loop end when left == right
     return left
-=======
-def search_smallest(A: List[int]) -> int:
-    # TODO - you fill in here.
-    return 0
->>>>>>> upstream/master
 
 
 if __name__ == '__main__':

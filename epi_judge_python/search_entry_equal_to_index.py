@@ -6,23 +6,28 @@ from test_framework.test_failure import TestFailure
 from test_framework.test_utils import enable_executor_hook
 
 
-<<<<<<< HEAD
-def search_entry_equal_to_its_index(A):
-    left, right = 0, len(A) - 1
-    while left <= right:
-        mid = left + (right-left)//2
-        if A[mid] - mid > 0:
-            right = mid - 1
-        elif A[mid] - mid < 0:
-            left = mid + 1
-        else:
-            return mid
-    return -1
-=======
+# def search_entry_equal_to_its_index(A):
+#     left, right = 0, len(A) - 1
+#     while left <= right:
+#         mid = left + (right-left)//2
+#         if A[mid] - mid > 0:
+#             right = mid - 1
+#         elif A[mid] - mid < 0:
+#             left = mid + 1
+#         else:
+#             return mid
+#     return -1
 def search_entry_equal_to_its_index(A: List[int]) -> int:
-    # TODO - you fill in here.
-    return 0
->>>>>>> upstream/master
+    low_index, high_index = 0, len(A) - 1
+    while low_index <= high_index:
+        mid_index = low_index + (high_index - low_index) // 2
+        if A[mid_index] < mid_index:
+            low_index += 1
+        elif A[mid_index] > mid_index:
+            high_index -= 1
+        else:
+            return mid_index
+    return -1
 
 
 @enable_executor_hook
