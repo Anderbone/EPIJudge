@@ -14,12 +14,25 @@ def intersect_two_sorted_arrays0(A, B):
            res.append(e)
     return res
 
-<<<<<<< HEAD
-=======
 def intersect_two_sorted_arrays(A: List[int], B: List[int]) -> List[int]:
-    # TODO - you fill in here.
-    return []
->>>>>>> upstream/master
+    i = j = 0
+    ans = []
+    while i < len(A) and j < len(B):
+        # both jump to the next that not equal to A[i]
+        if A[i] == B[j]:
+            e = A[i]
+            ans.append(e)
+            i += 1
+            while A[i] == e:
+                i += 1
+            j += 1
+            while A[j] == e:
+                j += 1
+        elif A[i] < B[j]:
+            i += 1
+        elif A[i] > B[j]:
+            j += 1
+    return ans
 
 def intersect_two_sorted_arrays(A, B):
     i, j, res = 0, 0, []
